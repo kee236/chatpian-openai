@@ -175,6 +175,8 @@ unset($all_links[$unsetkey]); // removing links without a real url
 links that are not in database [custom link = sibebar parent]
 No need to add a custom link if it's parent is controller/index
 */
+
+
 $custom_links=array
 (
   base_url("admin/general_settings")=>base_url("admin/settings"),
@@ -186,13 +188,23 @@ $custom_links=array
   base_url("admin/add_user")=>base_url("admin/user_manager"),
   base_url("admin/edit_user")=>base_url("admin/user_manager"),
   base_url("admin/login_log")=>base_url("admin/user_manager"),
+
+
+
+
   base_url("payment/add_package")=>base_url("payment/package_manager"),
   base_url("payment/update_package")=>base_url("payment/package_manager"),
   base_url("payment/details_package")=>base_url("payment/package_manager"),
+
+
+
   base_url("announcement/add")=>base_url("announcement/full_list"),
   base_url("announcement/edit")=>base_url("announcement/full_list"),
   base_url("announcement/details")=>base_url("announcement/full_list"),
   base_url("addons/upload")=>base_url("addons/lists"),
+
+
+
   base_url("comment_automation/all_auto_comment_report")=>base_url("comment_automation/comment_section_report"),
   base_url("comment_automation/all_auto_comment_report/0/0")=>base_url("instagram_reply/reports"),
   base_url("comment_automation/all_auto_reply_report")=>base_url("comment_automation/comment_section_report"),
@@ -200,41 +212,69 @@ $custom_links=array
   base_url("comment_reply_enhancers/bulk_comment_reply_campaign_list")=>base_url("comment_automation/comment_section_report"),
   base_url("comment_reply_enhancers/all_response_report")=>base_url("comment_automation/comment_section_report"),
   base_url("comment_reply_enhancers/all_like_share_report")=>base_url("comment_automation/comment_section_report"),
+
+
+
+
+
   base_url("messenger_bot_enhancers/checkbox_plugin_list")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/checkbox_plugin_add")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/checkbox_plugin_edit")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/send_to_messenger_list")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/send_to_messenger_add")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/send_to_messenger_edit")=>base_url("messenger_bot"),
+
+
   base_url("messenger_bot_enhancers/mme_link_list")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/mme_link_add")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/mme_link_edit")=>base_url("messenger_bot"),
+
+
   base_url("messenger_bot_enhancers/customer_chat_plugin_list")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/customer_chat_add")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/customer_chat_edit")=>base_url("messenger_bot"),  
   base_url("messenger_bot_enhancers/subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
   base_url("messenger_bot_enhancers/create_subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
   base_url("messenger_bot_enhancers/edit_subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
+
+
   base_url("message_manager/message_dashboard")=>base_url("subscriber_manager"),
+
+
   base_url("messenger_bot/tree_view")=>base_url("messenger_bot"),
+
   base_url("messenger_bot_connectivity/analytics")=>base_url("messenger_bot"),
+
   base_url("messenger_bot_connectivity/saved_template_view")=>base_url("messenger_bot"),
   base_url("webview_builder")=>base_url("messenger_bot"),
   base_url("webview_builder/manager")=>base_url("messenger_bot"),
+
   base_url("autoposting/settings")=>base_url("ultrapost"),
   base_url("instagram_poster")=>base_url("ultrapost"),
+
   base_url("themes/upload") => base_url("themes/lists"),
+
   base_url("messenger_bot_connectivity/webview_builder_manager") => base_url("messenger_bot"),
+
   base_url("messenger_bot_connectivity") => base_url("messenger_bot"),
+
   base_url("messenger_bot_connectivity/edit_webview") => base_url("messenger_bot"),
   base_url("sms_email_manager/contact_group_list") => base_url("subscriber_manager"),
   base_url("sms_email_manager/contact_list") => base_url("subscriber_manager"),
+
   base_url("sms_email_manager/sms_campaign_lists") => base_url("messenger_bot_broadcast"),
+
   base_url("sms_email_manager/create_sms_campaign") => base_url("messenger_bot_broadcast"),
+
   base_url("sms_email_manager/edit_sms_campaign") => base_url("messenger_bot_broadcast"),
+
   base_url("sms_email_manager/email_campaign_lists") => base_url("messenger_bot_broadcast"),
+
   base_url("sms_email_manager/create_email_campaign") => base_url("messenger_bot_broadcast"),
+
   base_url("sms_email_manager/edit_email_campaign") => base_url("messenger_bot_broadcast"),
+
+
 
   base_url("comment_automation/comment_template_manager") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_automation/template_manager") => base_url("comment_automation/comment_growth_tools"),
@@ -242,13 +282,17 @@ $custom_links=array
   base_url("comment_automation/comment_section_report") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_automation/all_auto_comment_report") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_automation/all_auto_reply_report") => base_url("comment_automation/comment_growth_tools"),
+
+
   base_url("comment_reply_enhancers/bulk_tag_campaign_list") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_reply_enhancers/bulk_comment_reply_campaign_list") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_reply_enhancers/all_response_report") => base_url("comment_automation/comment_growth_tools"),
+
   base_url("comment_reply_enhancers/all_like_share_report") => base_url("comment_automation/comment_growth_tools"),
 
   base_url("comment_reply_enhancers/post_list") => base_url("comment_automation/comment_growth_tools"),
   base_url("instagram_reply/template_manager") => base_url("comment_automation/comment_growth_tools"),
+
   base_url("instagram_reply/get_account_lists") => base_url("comment_automation/comment_growth_tools"),
   base_url("comment_automation/all_auto_comment_report") => base_url("comment_automation/comment_growth_tools"),
   base_url("instagram_reply/instagram_autoreply_report/post") => base_url("comment_automation/comment_growth_tools"),
@@ -301,15 +345,28 @@ $custom_links=array
 
 
   base_url("payment/accounts") => base_url("integration"),
+
   base_url("social_apps") => base_url("integration"),
+
   base_url("comboposter/social_accounts") => base_url("integration"),
+
   base_url("email_auto_responder_integration") => base_url("integration"),
+
   base_url("messenger_bot_connectivity/json_api_connector") => base_url("integration"),
+
   base_url("sms_email_manager/sms_api_lists") => base_url("integration"),
+
   base_url("sms_email_manager/smtp_config") => base_url("integration"),
+
   base_url("sms_email_manager/mandrill_api_config") => base_url("integration"),
+
+
   base_url("sms_email_manager/sendgrid_api_config") => base_url("integration"),
+
   base_url("sms_email_manager/mailgun_api_config") => base_url("integration"),
+
+
+
   base_url("woocommerce_abandoned_cart") => base_url("integration"),
   base_url("woocommerce_integration") => base_url("integration")
 

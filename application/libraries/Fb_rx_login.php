@@ -142,7 +142,7 @@ class Fb_rx_login
 
 		$helper = $this->fb->getRedirectLoginHelper();
 
-		if($this->CI->config->item('facebook_poster_group_enable_disable') == '1' && $this->CI->is_group_posting_exist)
+	/*	if($this->CI->config->item('facebook_poster_group_enable_disable') == '1' && $this->CI->is_group_posting_exist)
 			$permissions = ['email','pages_manage_posts','pages_manage_engagement','pages_manage_metadata','pages_read_engagement','pages_show_list','pages_messaging','public_profile','publish_to_groups','read_insights'];
 		else
 			$permissions = ['email','pages_manage_posts','pages_manage_engagement','pages_manage_metadata','pages_read_engagement','pages_show_list','pages_messaging','public_profile','read_insights'];
@@ -158,6 +158,51 @@ class Fb_rx_login
 		
 		return '<a class="btn btn-block btn-social btn-facebook" href="'.htmlspecialchars($loginUrl).'"><span class="fab fa-facebook"></span> ThisIsTheLoginButtonForFacebook</a>';	
 	}
+*/
+/**
+ * ฟังก์ชันการเข้าสู่ระบบ Facebook
+ *
+ * @param string $redirect_url URL การเปลี่ยนเส้นทางหลังการเข้าสู่ระบบ
+ * @return string ลิงก์การเข้าสู่ระบบ Facebook
+ */
+public function login_for_user_access_token($redirect_url = "")
+{
+    $redirect_url = rtrim($redirect_url, '/');
+    $helper = $this->fb->getRedirectLoginHelper();
+
+    $permissions = [
+        'email',
+        'pages_manage_posts',
+        'pages_manage_engagement',
+        'pages_manage_metadata',
+        'pages_read_engagement',
+        'pages_show_list',
+        'pages_messaging',
+        'public_profile',
+        'read_insights'
+    ];
+
+    if ($this->CI->config->item('facebook_poster_group_enable_disable') == '1' && $this->CI->is_group_posting_exist) {
+        $permissions[] = 'publish_to_groups';
+    }
+
+    if ($this->CI->config->item('instagram_reply_enable_disable') == '1') {
+        $permissions = array_merge($permissions, [
+            'instagram_basic',
+            'instagram_manage_comments',
+            'instagram_manage_insights',
+            'instagram_content_publish',
+            'instagram_manage_messages'
+        ]);
+    }
+
+
+
+
+    $loginUrl = $helper->getLoginUrl($redirect_url, $permissions);
+
+    return '<a class="btn btn-block btn-social btn-facebook" href="' . htmlspecialchars($loginUrl) . '"><span class="fab fa-facebook"></span> เข้าสู่ระบบ Facebook</a>';
+}
 
 
 	public function login_callback_without_email($redirect_url="")

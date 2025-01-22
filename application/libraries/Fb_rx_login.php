@@ -135,14 +135,14 @@ class Fb_rx_login
 	    
 	}
 
-
+/*
 	function login_for_user_access_token($redirect_url="")
 	{	
 		$redirect_url=rtrim($redirect_url,'/');
 
 		$helper = $this->fb->getRedirectLoginHelper();
 
-	/*	if($this->CI->config->item('facebook_poster_group_enable_disable') == '1' && $this->CI->is_group_posting_exist)
+		if($this->CI->config->item('facebook_poster_group_enable_disable') == '1' && $this->CI->is_group_posting_exist)
 			$permissions = ['email','pages_manage_posts','pages_manage_engagement','pages_manage_metadata','pages_read_engagement','pages_show_list','pages_messaging','public_profile','publish_to_groups','read_insights'];
 		else
 			$permissions = ['email','pages_manage_posts','pages_manage_engagement','pages_manage_metadata','pages_read_engagement','pages_show_list','pages_messaging','public_profile','read_insights'];

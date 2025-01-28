@@ -102,3 +102,65 @@ class Tiktok_automation extends Home
         redirect("tiktok_automation/dashboard");
     }
 }
+
+public function analytics()
+{
+    $data['page_title'] = "TikTok Analytics";
+    $data['body'] = "tiktok/analytics_view";
+
+    // ดึงข้อมูลสถิติจากฐานข้อมูลหรือ TikTok API
+    $data['analytics_data'] = $this->Tiktok_model->get_analytics_data($this->user_id);
+
+    $this->_viewcontroller($data);
+}
+
+
+
+public function account_management()
+{
+    $data['page_title'] = "TikTok Account Management";
+    $data['body'] = "tiktok/account_management_view";
+
+    // ดึงบัญชี TikTok ทั้งหมดของผู้ใช้
+    $data['accounts'] = $this->Tiktok_model->get_user_accounts($this->user_id);
+
+    $this->_viewcontroller($data);
+}
+
+public function delete_account($account_id)
+{
+    $this->Tiktok_model->delete_account($account_id);
+    $this->session->set_flashdata('success', 'Account deleted successfully.');
+    redirect('tiktok_automation/account_management');
+}
+
+
+
+public function analytics()
+{
+    $data['page_title'] = "TikTok Analytics";
+    $data['body'] = "tiktok/analytics_view";
+
+    // ดึงข้อมูลสถิติจากฐานข้อมูลหรือ TikTok API
+    $data['analytics_data'] = $this->Tiktok_model->get_analytics_data($this->user_id);
+
+    $this->_viewcontroller($data);
+}
+
+public function account_management()
+{
+    $data['page_title'] = "TikTok Account Management";
+    $data['body'] = "tiktok/account_management_view";
+
+    // ดึงบัญชี TikTok ทั้งหมดของผู้ใช้
+    $data['accounts'] = $this->Tiktok_model->get_user_accounts($this->user_id);
+
+    $this->_viewcontroller($data);
+}
+
+public function delete_account($account_id)
+{
+    $this->Tiktok_model->delete_account($account_id);
+    $this->session->set_flashdata('success', 'Account deleted successfully.');
+    redirect('tiktok_automation/account_management');
+}

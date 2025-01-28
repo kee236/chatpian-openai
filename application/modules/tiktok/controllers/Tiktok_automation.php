@@ -1,6 +1,14 @@
 <?php 
 
 /*
+/controllers
+   Tiktok_automation.php (เพิ่ม Analytics และ Account Management)
+/models
+   Tiktok_model.php (เพิ่มฟังก์ชัน Analytics)
+/views/tiktok/
+   analytics_view.php
+   account_management_view.php
+
 
 /controllers
    Tiktok_automation.php
@@ -25,6 +33,25 @@ CREATE TABLE `tiktok_accounts` (
     PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `tiktok_auto_replies` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `user_id` int(11) NOT NULL,
+    `video_id` varchar(255) NOT NULL,
+    `reply_text` text NOT NULL,
+    `created_at` datetime NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `tiktok_analytics` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `user_id` int(11) NOT NULL,
+    `video_title` varchar(255) NOT NULL,
+    `views` int(11) NOT NULL,
+    `likes` int(11) NOT NULL,
+    `comments` int(11) NOT NULL,
+    PRIMARY KEY (`id`)
+);
 
 
 */
